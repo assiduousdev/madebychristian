@@ -1,0 +1,29 @@
+
+.LoadingScreen {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+
+  background-color: hsl(var(--accent-900));
+}
+
+.LoadingScreen__heading {
+  color: hsl(var(--primary));
+  font-size: var(--fs-display-700);
+  font-weight: var(--fw-900);
+}
+
+.LoadingScreen__heading .char.animated {
+  display: inline-block;
+  transform-origin: bottom;
+
+  animation: up var(--length, 0) ease-out both;
+  animation-delay: var(--delay, 0);
+}
+
+@keyframes up {
+  from {
+    transform:  translateY(2.4rem);
+    opacity: 0;
+  }
+}
