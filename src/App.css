@@ -1,0 +1,101 @@
+
+.PageTransition {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+
+  font-size: var(--fs-display-700);
+  font-weight: var(--fw-900);
+  background-color: hsl(var(--accent-900));
+}
+
+.PageTransition__texts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.PageTransition__texts .PageTransition__intro-wrapper,
+.PageTransition__texts .PageTransition__outro-wrapper {
+  display: block;
+  padding-bottom: 3.2rem;
+  grid-area: 1 / 1 / 1 / 1;
+  
+  text-align: center;
+  
+  overflow: hidden;
+}
+
+.PageTransition__intro-wrapper .PageTransition__inner-text {
+  text-shadow: 0px 19.6rem 0px hsl(var(--primary));
+  animation: intro-slide-upwards var(--intro-transition-length, 0) cubic-bezier(.53,.22,.03,.75) both;
+  animation-delay: var(--intro-transition-delay, 0);
+} 
+
+.PageTransition__outro-wrapper .PageTransition__inner-text {
+  padding: 3.2rem;
+  transform-origin: center;
+  
+  color: hsl(var(--primary));
+
+  animation: outro-slide-upwards var(--outro-transition-length, 0) cubic-bezier(.53,.22,.03,.75) both;
+  animation-delay: var(--outro-transition-delay, 0);
+} 
+
+@keyframes intro-slide-upwards {
+  0% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-16.4rem);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes outro-slide-upwards {
+  0% {
+    transform: translateY(16.4rem) scaleX(1);
+  }
+    
+  25% {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+  }
+
+  49% {
+    color: hsl(var(--primary));
+    background-color: hsl(var(--accent-900));
+  }
+  
+  50% {
+    color: hsl(var(--accent-900));
+    background-color: hsl(var(--primary));
+  }
+
+  79% {
+    color: hsl(var(--accent-900));
+  }
+
+  80% {
+    color: hsl(var(--primary));
+    transform: translateY(0) scaleX(1);
+  }
+  
+  90% {
+    transform: translateY(0) scaleX(0.25);
+  }
+
+  100% {
+    transform: translateY(0) scaleX(0.25) rotate(30deg);
+    background-color: hsl(var(--primary));
+  }
+}

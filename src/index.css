@@ -72,6 +72,7 @@ body::before {
   opacity: 20%;
 
   content: "";
+  pointer-events: none;
   filter: url(#texture);
 }
 
