@@ -1,7 +1,7 @@
 
-const INTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 600;
-const OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 1000;
-const PAGE_TRANSITION_LENGTH_IN_MILLISECONDS = 400;
+const INTRO_TRANSITION_LENGTH_MS = 600;
+const OUTRO_TRANSITION_LENGTH_MS = 1000;
+const PAGE_TRANSITION_LENGTH_MS = 400;
 
 /*
 
@@ -44,17 +44,17 @@ const config = {
   },
   transitionOptions: {
     intro: {
-      duration: INTRO_TRANSITION_LENGTH_IN_MILLISECONDS,
+      duration: INTRO_TRANSITION_LENGTH_MS,
       easing: "cubic-bezier(.2,.07,.02,.7)",
       fill: "both"
     },
     outro: {
-      duration: OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS,
+      duration: OUTRO_TRANSITION_LENGTH_MS,
       easing: "cubic-bezier(.2,.07,.02,.7)",
       fill: "both"
     },
     background: {
-      duration: PAGE_TRANSITION_LENGTH_IN_MILLISECONDS,
+      duration: PAGE_TRANSITION_LENGTH_MS,
       easing: "cubic-bezier(.2,.07,.02,.7)",
       fill: "both"
     },

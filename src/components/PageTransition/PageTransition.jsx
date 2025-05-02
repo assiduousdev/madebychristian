@@ -6,7 +6,7 @@ import PageTransitionOutro from "./PageTransitionOutro/PageTransitionOutro";
 import config from "./PageTransition.config";
 import "./PageTransition.css";
 
-export default function PageTransition() {
+export default function PageTransition({ setPerformingTransition }) {
   const pageTransitionRef = useRef(null);
   const pageIntroRefs = useRef(null);
   const pageOutroRef = useRef(null);
@@ -27,6 +27,8 @@ export default function PageTransition() {
         await pageOutroRef.current.animate(config.transitions.outro, config.transitionOptions.outro).finished;
 
         await pageTransitionRef.current.animate(config.transitions.background, config.transitionOptions.background);
+
+        setPerformingTransition(false);
       }
     }
 
