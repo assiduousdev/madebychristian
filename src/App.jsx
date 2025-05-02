@@ -7,23 +7,21 @@ import "./App.css";
 
 function App() { 
   const [performingTransition, setPerformingTransition] = useState(true);
-  const [isPageTransitionVisible, setIsPageTransitionVisible] = useState(true);
+  const [hidePageTransition, setHidePageTransition] = useState(true);
   const removePageTransitionTimeoutId = useRef(null);
 
-  const PAGE_TRANSITION_REMOVAL_DELAY_MS = 10000;
+  const PAGE_TRANSITION_REMOVAL_DELAY_MS = 100;
 
   useEffect(() => {
     if (!performingTransition) {
       // add delay for PageTransition removal for smoother animation
       removePageTransitionTimeoutId.current = setTimeout(() => {
-        setIsPageTransitionVisible(false);
+        setHidePageTransition(false);
       }, PAGE_TRANSITION_REMOVAL_DELAY_MS);
-      console.log(removePageTransitionTimeoutId.current);
     }
 
     return () => {
       if (removePageTransitionTimeoutId.current) {
-        console.log(removePageTransitionTimeoutId.current);
         clearTimeout(removePageTransitionTimeoutId.current);
         removePageTransitionTimeoutId.current = null;
       }
@@ -33,7 +31,7 @@ function App() {
   return (
     <>
       {
-        isPageTransitionVisible && (
+        hidePageTransition && (
           <PageTransition setPerformingTransition={setPerformingTransition} /> 
         )
       }

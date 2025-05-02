@@ -26,7 +26,7 @@ export default function PageTransition({ setPerformingTransition }) {
 
         await pageOutroRef.current.animate(config.transitions.outro, config.transitionOptions.outro).finished;
 
-        await pageTransitionRef.current.animate(config.transitions.background, config.transitionOptions.background);
+        await pageTransitionRef.current.animate(config.transitions.background, config.transitionOptions.background).finished;
 
         setPerformingTransition(false);
       }
