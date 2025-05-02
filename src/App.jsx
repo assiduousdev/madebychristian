@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import Hero from "./components/Hero/Hero";
 import PageTransition from "./components/PageTransition/PageTransition";
 
 import "./App.css";
@@ -31,14 +32,12 @@ function App() {
   return (
     <>
       {
-        hidePageTransition && (
+        ((import.meta.env.VITE_USER_NODE_ENV !== "development" && hidePageTransition) && 
           <PageTransition setPerformingTransition={setPerformingTransition} /> 
         )
       }
 
-      <div className="Hero">
-
-      </div>
+      <Hero />
     </>
   )
 }

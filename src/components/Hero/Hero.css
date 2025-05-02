@@ -1,0 +1,22 @@
+
+.Hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: 
+    "nav nav nav nav"
+    "content content content content";
+  gap: var(--spacing-100);
+  padding: var(--spacing-400);
+  min-height: 100dvh;
+}
+
+.Hero > .NavigationBar {
+  grid-area: nav;
+}
+
+.NavigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

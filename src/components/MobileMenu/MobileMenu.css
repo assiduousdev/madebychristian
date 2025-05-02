@@ -1,0 +1,77 @@
+
+.MobileMenu__btn {
+  position: relative;
+  width: 3.6rem;
+  grid-area: btn;
+  
+  border: none;
+  background-color: transparent;
+  
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.MobileMenu__btn::before,
+.MobileMenu__btn::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+
+  background-color: hsl(var(--accent-900));
+
+  content: "";
+}
+
+.MobileMenu__btn::before {
+  top: 0.8rem;
+  transform-origin: center;
+}
+
+.MobileMenu__btn::after {
+  bottom: 0.8rem;
+  transform-origin: center;
+}
+
+.MobileMenu[data-open="true"] .MobileMenu__btn::before {
+  transform: translateY(0.8rem) rotate(45deg);
+}
+
+.MobileMenu[data-open="true"] .MobileMenu__btn::after {
+  transform: translateY(-0.8rem) rotate(-45deg);
+}
+
+
+.MobileMenu__menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-template-areas: 
+    "links"
+    "logo";
+  padding: var(--spacing-400);
+  width: 100%;
+  min-height: 100dvh;
+  background-color: hsl(var(--primary));
+}
+
+.MobileMenu__menu ul {
+  grid-area: links;
+  align-self: center;
+  list-style-type: none;
+}
+
+.MobileMenu__menu a:link,
+.MobileMenu__menu a:visited {
+  font-size: var(--fs-heading-600);
+  font-weight: var(--fw-800);
+  color: hsl(var(--accent-900));
+  text-decoration: none;
+}
+
+.MobileMenu__menu div {
+  grid-area: logo;
+}
