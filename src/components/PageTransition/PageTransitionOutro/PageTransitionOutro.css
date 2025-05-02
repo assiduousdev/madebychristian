@@ -1,0 +1,6 @@
+
+.PageTransition__outro .PageTransition__inner-text {
+  padding: var(--spacing-400);
+  opacity: 0;
+  transform: translateY(100%);
+}
