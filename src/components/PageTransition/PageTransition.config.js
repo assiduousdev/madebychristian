@@ -1,7 +1,9 @@
 
 const INTRO_TRANSITION_LENGTH_MS = 600;
-const OUTRO_TRANSITION_LENGTH_MS = 1000;
-const PAGE_TRANSITION_LENGTH_MS = 400;
+const OUTRO_TRANSITION_LENGTH_MS = 600;
+const PAGE_TRANSITION_LENGTH_MS = 950;
+
+const TRANSITIONS_EASING = "cubic-bezier(.74,-0.02,0,1.12)";
 
 /*
 
@@ -24,18 +26,18 @@ const config = {
   ],
   transitions: {
     intro: [
-      { transform: "translateY(0)", opacity: 1, offset: 0.25 },
-      
-      { transform: "translateY(0)", opacity: 1, offset: 0.99 },
-      
-      { transform: "translateY(-100%)", opacity: 0 }
+      { transform: "translateY(0)", opacity: 1, offset: 0.1 },
+            
+      { transform: "translateY(0)", opacity: 1, offset: 0.8 },
+
+      { transform: "translateY(100%)", opacity: 0 }
     ],
     outro: [
-      { transform: "translateY(0)", opacity: 1, offset: 0.25 },
+      { transform: "translateY(0)", opacity: 1, offset: 0.1 },
       
-      { transform: "translateY(0)", opacity: 1, offset: 0.99 },
+      { transform: "translateY(0)", opacity: 1, offset: 0.8 },
       
-      { transform: "translateY(-100%)", opacity: 0 }
+      { transform: "translateY(100%)", opacity: 0 }
     ],
     background: [
       { transform: "scaleY(1)" },
@@ -45,17 +47,17 @@ const config = {
   transitionOptions: {
     intro: {
       duration: INTRO_TRANSITION_LENGTH_MS,
-      easing: "cubic-bezier(.2,.07,.02,.7)",
+      easing: "ease-in",
       fill: "both"
     },
     outro: {
       duration: OUTRO_TRANSITION_LENGTH_MS,
-      easing: "cubic-bezier(.2,.07,.02,.7)",
+      easing: "ease-in",
       fill: "both"
     },
     background: {
       duration: PAGE_TRANSITION_LENGTH_MS,
-      easing: "cubic-bezier(.2,.07,.02,.7)",
+      easing: TRANSITIONS_EASING,
       fill: "both"
     },
   },
