@@ -1,6 +1,6 @@
 
 const INTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 600;
-const OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 800;
+const OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 1000;
 
 const cssVariables = {
   colors: {
@@ -24,7 +24,13 @@ const config = {
       { transform: "translateY(100%)", opacity: "0" }
     ],
     outro: [
-      { transform: "translateY(0)", opacity: "1", color: cssVariables.colors.accent900, "backgroundColor": cssVariables.colors.primary },
+      { opacity: 1, transform: "translateY(0)", offset: 0.25 },
+      { color: cssVariables.colors.primary, backgroundColor: cssVariables.colors.accent900, offset: 0.26 },
+      { color: cssVariables.colors.primary, backgroundColor: cssVariables.colors.accent900, offset: 0.69 },
+      { color: cssVariables.colors.accent900, backgroundColor: cssVariables.colors.primary, offset: 0.7 },
+      { color: cssVariables.colors.accent900,  offset: 0.98 },
+      { color: cssVariables.colors.primary, offset: 0.99 },
+      { opacity: 1, transform: "translateY(0)", backgroundColor: cssVariables.colors.primary },
     ]
   },
   transitionOptions: {
