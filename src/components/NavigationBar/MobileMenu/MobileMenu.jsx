@@ -44,7 +44,7 @@ export default function MobileMenu() {
               </li>
             </ul>
 
-            <div>madebychristian</div>
+            <div className="logo">madebychristian</div>
           </div>,
           document.body
         )

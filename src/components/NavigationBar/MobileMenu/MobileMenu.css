@@ -42,7 +42,6 @@
   transform: translateY(-0.8rem) rotate(-45deg);
 }
 
-
 .MobileMenu__menu {
   position: absolute;
   top: 0;
@@ -61,7 +60,6 @@
 .MobileMenu__menu ul {
   grid-area: links;
   align-self: center;
-  list-style-type: none;
 }
 
 .MobileMenu__menu a:link,
@@ -69,7 +67,6 @@
   font-size: var(--fs-heading-600);
   font-weight: var(--fw-800);
   color: hsl(var(--accent-900));
-  text-decoration: none;
 }
 
 .MobileMenu__menu div {

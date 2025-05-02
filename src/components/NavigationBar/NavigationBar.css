@@ -1,0 +1,36 @@
+
+.NavigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 3.6rem;
+}
+
+.NavigationBar__name,
+.NavigationBar__links {
+  display: none;
+}
+
+@media screen and (min-width: 46.875em) {
+  .NavigationBar__name {
+    display: block;
+  }
+
+  .NavigationBar__links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+  }
+  
+  .NavigationBar .MobileMenu {
+    display: none;
+  }
+}
+
+
+
+.NavigationBar__links a:link,
+.NavigationBar__links a:visited {
+  color: hsl(var(--accent-900));
+}

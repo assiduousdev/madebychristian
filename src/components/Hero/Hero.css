@@ -14,9 +14,3 @@
 .Hero > .NavigationBar {
   grid-area: nav;
 }
-
-.NavigationBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
