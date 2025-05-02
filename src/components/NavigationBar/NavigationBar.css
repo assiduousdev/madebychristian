@@ -12,7 +12,7 @@
   display: none;
 }
 
-@media screen and (min-width: 46.875em) {
+@media screen and (min-width: 56.25em) {
   .NavigationBar__name {
     display: block;
   }
@@ -20,15 +20,13 @@
   .NavigationBar__links {
     display: flex;
     align-items: center;
-    gap: var(--spacing-200);
+    gap: var(--spacing-500);
   }
   
   .NavigationBar .MobileMenu {
     display: none;
   }
 }
-
-
 
 .NavigationBar__links a:link,
 .NavigationBar__links a:visited {

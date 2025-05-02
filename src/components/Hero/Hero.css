@@ -3,14 +3,39 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: min-content 1fr;
-  grid-template-areas: 
-    "nav nav nav nav"
-    "content content content content";
-  gap: var(--spacing-100);
-  padding: var(--spacing-400);
+  gap: var(--spacing-300);
+  padding: var(--spacing-500) var(--spacing-600);
   min-height: 100dvh;
 }
 
 .Hero > .NavigationBar {
-  grid-area: nav;
+  grid-area: 1 / 1 / 2 / -1;
+}
+
+.Hero h1 {
+  font-size: var(--fs-display-700);
+  font-weight: var(--fw-900);
+  align-self: center;
+}
+
+@media screen and (min-width: 46.875em) {
+  .Hero {
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--spacing-300);
+  }
+
+  .Hero h1 {
+    grid-column: 2 / 4;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .Hero {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-300);
+  }
+
+  .Hero h1 {
+    grid-column: 3 / 6;
+  }
 }
