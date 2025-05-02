@@ -1,0 +1,28 @@
+
+.PageTransition {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+
+  font-size: var(--fs-display-700);
+  font-weight: var(--fw-900);
+  background-color: hsl(var(--accent-900));
+}
+
+.PageTransition__texts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  color: hsl(var(--primary));
+}
+
+.PageTransition__texts .PageTransition__intro,
+.PageTransition__texts .PageTransition__outro {
+  display: block;
+  grid-area: 1 / 1 / 1 / 1;
+  
+  text-align: center;
+  
+  overflow: hidden;
+}
