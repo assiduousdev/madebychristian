@@ -1,6 +1,11 @@
 
 const INTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 600;
 const OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS = 1000;
+const PAGE_TRANSITION_LENGTH_IN_MILLISECONDS = 400;
+
+/*
+
+// Was used before when animating color/background color changes though WAAPI, left for reference
 
 const cssVariables = {
   colors: {
@@ -8,6 +13,8 @@ const cssVariables = {
     accent900: `hsl(${window.getComputedStyle(document.documentElement).getPropertyValue("--accent-900")})`
   }
 };
+
+*/
 
 const config = {
   intros: [
@@ -17,20 +24,22 @@ const config = {
   ],
   transitions: {
     intro: [
-      { transform: "translateY(0)", opacity: "1", offset: 0.25 },
+      { transform: "translateY(0)", opacity: 1, offset: 0.25 },
       
-      { transform: "translateY(0)", opacity: "1", offset: 0.99 },
+      { transform: "translateY(0)", opacity: 1, offset: 0.99 },
       
-      { transform: "translateY(100%)", opacity: "0" }
+      { transform: "translateY(-100%)", opacity: 0 }
     ],
     outro: [
-      { opacity: 1, transform: "translateY(0)", offset: 0.25 },
-      { color: cssVariables.colors.primary, backgroundColor: cssVariables.colors.accent900, offset: 0.26 },
-      { color: cssVariables.colors.primary, backgroundColor: cssVariables.colors.accent900, offset: 0.69 },
-      { color: cssVariables.colors.accent900, backgroundColor: cssVariables.colors.primary, offset: 0.7 },
-      { color: cssVariables.colors.accent900,  offset: 0.98 },
-      { color: cssVariables.colors.primary, offset: 0.99 },
-      { opacity: 1, transform: "translateY(0)", backgroundColor: cssVariables.colors.primary },
+      { transform: "translateY(0)", opacity: 1, offset: 0.25 },
+      
+      { transform: "translateY(0)", opacity: 1, offset: 0.99 },
+      
+      { transform: "translateY(-100%)", opacity: 0 }
+    ],
+    background: [
+      { transform: "scaleY(1)" },
+      { transform: "scaleY(0)" }
     ]
   },
   transitionOptions: {
@@ -39,13 +48,17 @@ const config = {
       easing: "cubic-bezier(.2,.07,.02,.7)",
       fill: "both"
     },
-      outro: {
+    outro: {
       duration: OUTRO_TRANSITION_LENGTH_IN_MILLISECONDS,
       easing: "cubic-bezier(.2,.07,.02,.7)",
       fill: "both"
     },
+    background: {
+      duration: PAGE_TRANSITION_LENGTH_IN_MILLISECONDS,
+      easing: "cubic-bezier(.2,.07,.02,.7)",
+      fill: "both"
+    },
   },
-
 }
 
 export default config;

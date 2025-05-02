@@ -1,8 +1,10 @@
 
 .PageTransition {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 100dvh;
+  transform-origin: top;
 
   font-size: var(--fs-display-700);
   font-weight: var(--fw-900);

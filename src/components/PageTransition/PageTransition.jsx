@@ -7,30 +7,36 @@ import config from "./PageTransition.config";
 import "./PageTransition.css";
 
 export default function PageTransition() {
+  const pageTransitionRef = useRef(null);
   const pageIntroRefs = useRef(null);
   const pageOutroRef = useRef(null);
+
   const [isIntroFinished, setIsIntroFinished] = useState(false);
 
   useEffect(() => {
     async function playTransition() {
       if (!isIntroFinished) {
         // TODO: Handle animations error properly
-        
-        const intros = Array.from(getPageIntros()).map(([_, intro]) => intro);
-        for (const intro of intros) {
+
+        for (const intro of getAnimations()) {
           await intro.animate(config.transitions.intro, config.transitionOptions.intro).finished;
         }
         
         setIsIntroFinished(true);
-        pageOutroRef.current.animate(config.transitions.outro, config.transitionOptions.outro);
+
+        await pageOutroRef.current.animate(config.transitions.outro, config.transitionOptions.outro).finished;
+
+        await pageTransitionRef.current.animate(config.transitions.background, config.transitionOptions.background);
       }
     }
 
     playTransition();
 
-    // clean up?
-
   }, []);
+
+  function getAnimations() {
+    return Array.from(getPageIntros()).map(([_, animation]) => animation);
+  }
  
   function getPageIntros() {
     if (!pageIntroRefs.current) {
@@ -41,24 +47,28 @@ export default function PageTransition() {
   }
 
   return (
-    <section className="PageTransition">
+    <section ref={pageTransitionRef} className="PageTransition">
       <div className="PageTransition__texts">
         {
-          config.intros.map((intro, index) => 
-            <PageTransitionIntro 
-              key={`${intro}-${index}`}  
-              ref={(node) => {
-                const map = getPageIntros();
-                map.set(index, node);
+          config.intros.map((intro, index) => {
+            const key = `${intro}-${index}`;
 
-                return () => {
-                  map.delete(index);
-                }
-              }}
+            return (
+              <PageTransitionIntro 
+                key={key}
+                ref={(node) => {
+                  const map = getPageIntros();
+                  map.set(key, node);
 
-              intro={intro} 
-            />
-          )
+                  return () => {
+                    map.delete();
+                  }
+                }}
+
+                intro={intro} 
+              />
+            )
+          })
         }
 
         <PageTransitionOutro 
