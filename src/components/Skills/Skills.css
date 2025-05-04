@@ -49,7 +49,23 @@
 }
 
 .Skills__spacer {
-  height: 100dvh;
+  min-height: 100dvh;
+}
+
+.Skills__transition {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  
+  background-color: hsl(var(--primary));
+  
+  transform: scaleX(0.90);
+  transform-origin: center;
+}
+
+.Skills__transition h2 {
+  font-size: var(--fs-display-500);
+  font-weight: var(--fw-900);
 }
 
 @media screen and (min-width: 53.125em) {

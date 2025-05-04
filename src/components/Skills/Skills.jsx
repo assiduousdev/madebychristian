@@ -35,6 +35,10 @@ export default function Skills() {
 
         <div className="Skills__spacer"></div>
       </div>
+
+      <div className="Skills__transition">
+        <h2>Work Experience</h2>
+      </div>
     </section>
   )
 }
