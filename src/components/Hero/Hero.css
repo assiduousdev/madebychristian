@@ -13,9 +13,13 @@
 }
 
 .Hero h1 {
-  font-size: var(--fs-display-700);
-  font-weight: var(--fw-900);
+  grid-area: 2 / 1 / -1 / -1;
+
   align-self: center;
+  text-transform: uppercase;
+  font-size: var(--fs-display-600);
+  font-weight: var(--fw-900);
+  letter-spacing: 2px;
 }
 
 @media screen and (min-width: 46.875em) {

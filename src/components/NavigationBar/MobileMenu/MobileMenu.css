@@ -2,7 +2,6 @@
 .MobileMenu__btn {
   position: relative;
   width: 3.6rem;
-  grid-area: btn;
   
   border: none;
   background-color: transparent;
