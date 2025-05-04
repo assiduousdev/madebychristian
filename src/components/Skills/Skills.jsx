@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section className="Skills">
       <div className="Skills__heading">
-        <h2>Technologies</h2>
+        <h2>My Tools</h2>
       </div>
 
       <div className="Skills__wrapper">

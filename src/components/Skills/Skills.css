@@ -1,5 +1,6 @@
 
 .Skills {
+  background-color: hsl(var(--secondary));
   padding-block: var(--spacing-700);
 }
 
@@ -10,9 +11,8 @@
 
 .Skills__heading h2 {
   color: hsl(var(--accent-800));
-  font-size: var(--fs-heading-600);
+  font-size: var(--fs-heading-500);
   font-weight: var(--fw-800);
-  text-transform: uppercase;
 }
 
 .Skills__wrapper {
