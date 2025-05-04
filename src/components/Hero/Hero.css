@@ -12,14 +12,36 @@
   grid-area: 1 / 1 / 2 / -1;
 }
 
-.Hero h1 {
+.Hero .Hero__heading {
   grid-area: 2 / 1 / -1 / -1;
-
   align-self: center;
+
   text-transform: uppercase;
   font-size: var(--fs-display-600);
   font-weight: var(--fw-900);
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
+}
+
+.Hero .Hero__heading > span {
+  display: block;
+}
+
+.Hero .Hero__heading > span:last-child {
+  text-align: end;
+}
+
+.Hero .Hero__description {
+  grid-area: 3 / 1 / -1 / -1;
+}
+
+@media screen and (min-width: 31.25em) {
+  .Hero .Hero__heading {
+    grid-area: 2 / 1 / -1 / -1;
+  }
+
+  .Hero .Hero__description {
+    grid-area: 3 / 1 / -1 / 4;
+  }
 }
 
 @media screen and (min-width: 46.875em) {
@@ -28,8 +50,12 @@
     gap: var(--spacing-300);
   }
 
-  .Hero h1 {
-    grid-column: 2 / 4;
+  .Hero .Hero__heading {
+    grid-area: 2 / 2 / -1 / -2;
+  }
+  
+  .Hero .Hero__description {
+    grid-area: 3 / 2 / -1 / 7;
   }
 }
 
@@ -37,9 +63,5 @@
   .Hero {
     grid-template-columns: repeat(12, 1fr);
     gap: var(--spacing-300);
-  }
-
-  .Hero h1 {
-    grid-column: 3 / 6;
   }
 }

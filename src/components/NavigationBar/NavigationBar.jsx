@@ -9,8 +9,6 @@ export default function NavigationBar() {
     <nav className="NavigationBar">
       <div className="NavigationBar__logo logo">madebychristian</div>
 
-      <div className="NavigationBar__name">Christian Lhie Besmanos</div>
-
       <ul className="NavigationBar__links">
         <li>
           <a href="#">LinkedIn</a>

@@ -1,6 +1,6 @@
 :root {
   --primary: 0 0 100;
-  --secondary: 0 0 100;
+  --secondary: 0 0 90;
 
   --accent-900: 160 0 5;
   --accent-800: 160 0 55;
@@ -28,9 +28,13 @@
   --fs-heading-200: 1.4rem;
   --fs-heading-100: 1.2rem;
 
-  --fs-body-300: 1.6rem;
-  --fs-body-200: 1.4rem;
-  --fs-body-100: 1.2rem;
+  --fs-body-300: 1.8rem;
+  --fs-body-200: 1.6rem;
+  --fs-body-100: 1.4rem;
+
+  --lh-body-300: 26px;
+  --lh-body-200: 24px;
+  --lh-body-100: 22px;
 
   --spacing-700: 6.4rem;
   --spacing-600: 3.2rem;
@@ -172,7 +176,7 @@ body {
   color: hsl(var(--accent-900));
   font-size: var(--fs-body-300);
   font-family: var(--ff-body);
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--secondary));
 
   position: relative;
 }
@@ -220,9 +224,31 @@ a {
 
 .container {
   margin-inline: auto;
-  padding-inline: var(--spacing-600);
+  max-width: 128rem;
 }
 
 .logo {
   font-weight: var(--fw-600);
 }
+
+.body-text-300 {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-body-300);
+  line-height: var(--lh-body-300);
+}
+
+.body-text-200 {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-body-200);
+  line-height: var(--lh-body-200);
+}
+
+.body-text-100 {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-body-100);
+  line-height: var(--lh-body-100);
+}
+
