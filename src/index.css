@@ -147,6 +147,24 @@
   }  
 }
 
+@media screen and (min-width: 120em) {
+  :root {
+    --fs-display-600: 10.8rem;
+    --fs-display-500: 9rem;
+    --fs-display-400: 7.4rem;
+    --fs-display-300: 6.2rem;
+    --fs-display-200: 5.2rem;
+    --fs-display-100: 4.4rem;
+
+    --fs-heading-600: 7.4rem;
+    --fs-heading-500: 6.2rem;
+    --fs-heading-400: 5.2rem;
+    --fs-heading-300: 4.4rem;
+    --fs-heading-200: 3.6rem;
+    --fs-heading-100: 3rem;
+  }  
+}
+
 @media screen and (min-width: 46.875em) {
   :root {
     --spacing-700: 8rem;
