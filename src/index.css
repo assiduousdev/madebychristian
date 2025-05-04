@@ -3,7 +3,7 @@
   --secondary: 0 0 90;
 
   --accent-900: 160 0 5;
-  --accent-800: 160 0 55;
+  --accent-800: 160 0 40;
   --accent-700: 158 92 95;
 
   --ff-heading: "Montserrat";
@@ -43,6 +43,8 @@
   --spacing-300: 1.4rem;
   --spacing-200: 1.1rem;
   --spacing-100: 1rem;
+
+  --max-width: 160rem;
 }
 
 /* 
@@ -187,6 +189,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
@@ -242,7 +245,7 @@ a {
 
 .container {
   margin-inline: auto;
-  max-width: 128rem;
+  max-width: var(--max-width);
 }
 
 .logo {

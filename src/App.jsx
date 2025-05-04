@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import Hero from "./components/Hero/Hero";
 import PageTransition from "./components/PageTransition/PageTransition";
+import Skills from "./components/Skills/Skills";
 
 import "./App.css";
 
@@ -37,7 +38,15 @@ function App() {
         )
       }
 
-      <Hero />
+      <main>
+        <Hero />
+
+        <Skills />
+
+        <div style={{ minHeight: "100dvh" }}>
+          <h2>DUMMY</h2>
+        </div>
+      </main>
     </>
   )
 }
