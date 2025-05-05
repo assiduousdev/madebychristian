@@ -6,6 +6,7 @@ import PageTransition from "./components/PageTransition/PageTransition";
 import Skills from "./components/Skills/Skills";
 
 import "./App.css";
+import WorkExperience from "./components/WorkExperience/WorkExperience";
 
 function App() { 
   const [performingTransition, setPerformingTransition] = useState(true);
@@ -43,9 +44,7 @@ function App() {
 
         <Skills />
 
-        <div style={{ minHeight: "100dvh" }}>
-          <h2>DUMMY</h2>
-        </div>
+        <WorkExperience />
       </main>
     </>
   )
